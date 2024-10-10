@@ -1,0 +1,37 @@
+.Section{
+    background-color: rgba(128, 128, 128, 0.123);
+    margin:20px 5%;
+    margin-top: 5vh;
+    min-height: 82vh;
+    border-radius: 10px;
+    
+}
+#AddFuction{
+    background-color: #ff6f91;
+    color: white;
+}
+.expense-form{
+   max-width: 35vh;
+    align-items: end;
+}
+.Section {
+    display: flex;
+    justify-content: flex-end; /* Cardlarni o'ng tomonga joylashtirish */
+    margin-right: 20px;
+}
+
+.card {
+    width: 100%; /* Card kengligini nazorat qilish uchun */
+    max-width: 100%; /* Maksimal kenglik */
+}
+
+.expense-form {
+    margin-right: 20px; /* Ekranning o'ng tomonida joylashganligi uchun joy */
+}
+
+#flowButton{
+    border:1px solid #ff6f91;
+    color: #ff6f91;
+    background-color: white;
+    font-weight:bold;
+}

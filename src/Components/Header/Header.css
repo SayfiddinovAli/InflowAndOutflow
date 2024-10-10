@@ -1,0 +1,36 @@
+#Header{
+    
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.123);
+}
+.btn-light{
+    color: #076969;
+    border: solid 1px  #076969;
+    background-color: rgba(128, 128, 128, 0.123) ;
+}
+.expense-form {
+    animation: slideDown 0.5s ease-in-out;
+  }
+  
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .btn-close {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .btn-close:hover {
+    color: red;
+  }
+  
