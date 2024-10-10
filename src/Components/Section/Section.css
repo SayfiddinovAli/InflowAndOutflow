@@ -35,3 +35,35 @@
     background-color: white;
     font-weight:bold;
 }
+.day{
+    font-size: 35px;
+}
+.Section {
+    margin: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa; /* Yengil fon rangi */
+}
+
+.day {
+    color: #ff6f91; /* Katta raqamning rangi */
+}
+
+.card-footer {
+    background-color: #ffffff; /* Pastki qism rangi */
+    font-weight: bold;
+    font-size: 1.5rem; /* Raqamni kattaroq qilish */
+}
+
+.display-5{
+    color: black;
+    font-size: 55px;
+}
+#pushtiRang{
+    color: #ff6f91;
+    font-weight: bold;
+}
+.text-end{
+text-align: right;
+}

@@ -9,6 +9,8 @@ export default function Section() {
         month: '',
         hour: '',
         minute: '',
+        year:'',
+        weekDay: '',
     });
 
     useEffect(() => {
@@ -19,12 +21,18 @@ export default function Section() {
           'July', 'August', 'September', 'October', 'November', 'December'
         ];
 
+
+    const weekDays = [
+        'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+    ];
         const day = now.getDate();
+        const weekDay = weekDays[now.getDay()];
+        const year = now.getFullYear();
         const month = months[now.getMonth()];
         const hour = String(now.getHours()).padStart(2, '0');
         const minute = String(now.getMinutes()).padStart(2, '0');
 
-        setDateTime({ day, month, hour, minute });
+        setDateTime({ day, month, hour, minute ,year,weekDay});
     }, []);
 
     const [showForm, setShowForm] = useState(false);
@@ -58,18 +66,25 @@ export default function Section() {
                             <p className='d-flex justify-content-between align-items-center'> <strong>Inflow</strong> <strong>Summa</strong> </p>
                             <hr />
                             <p className='d-flex justify-content-between align-items-center'><strong>Outflow</strong> <strong>summa</strong></p>
-                             <hr />
+                             
                         </blockquote>
                         
                     </div>
-                    <div className="card-header d-flex justify-content-between align-items-center">
-                        <span>{dateTime.month} <sup>{dateTime.day}<MdCalendarMonth className='ms-1 mb-2' size={18} color='#ff6f91' /></sup> </span>
-
-                        <div className="button">
-                            <button className="btn me-2" id='flowButton' onClick={() => toggleForm('Outflow')}>Outflow</button>
-                            <button className="btn" id='flowButton' onClick={() => toggleForm('Inflow')}>Inflow</button>
+                    <div className="card-header d-flex  align-items-center">
+                        <div className="text-center">
+                            {/* Day elementining kattaligini oshirish uchun display-4 klassi qo'shildi */}
+                            <span className="display-5 day me-2">{dateTime.day}</span>
+                            
                         </div>
+                        <div className="text-center">
+                            <p className="mb-0">{dateTime.weekDay}</p>
+                            <p className="mb-0 " id='pushtiRang'>{dateTime.month} {dateTime.year}</p>
+                            
+                        </div>
+                        <p className=''>+6000</p>
                     </div>
+
+
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
                             <p className='d-flex justify-content-between align-items-center'> <strong>Inflow</strong> <strong>Summa</strong> </p>
