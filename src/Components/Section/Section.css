@@ -67,3 +67,11 @@
 .text-end{
 text-align: right;
 }
+.icon{
+    cursor: pointer;
+    
+}
+.icon:hover{
+border: 1px solid #ff6f91;
+
+}
