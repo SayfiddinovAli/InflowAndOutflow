@@ -14,6 +14,14 @@ export default function Section() {
     const [tasks, setTasks] = useState([]);
     const [outFlows, setOutflows] = useState([]);
 
+    // balans
+
+    const [balance ,setBalance]=useState(0);
+    const [expenseBalance ,setExpenseBalance]=useState(0);
+    const [IncomeBalance ,setIncomeBalance]=useState(0);
+
+    
+
     const [dateTime, setDateTime] = useState({
         day: '',
         month: '',
@@ -58,6 +66,8 @@ export default function Section() {
         e.preventDefault();
         if (valueAmount && valueinCome) {
             setTasks([...tasks, { sum: valueAmount, title: valueinCome }]);
+            setBalance(balance + parseFloat(valueAmount));
+            setIncomeBalance(IncomeBalance + parseFloat(valueAmount) )
             setValue("");
             setValueincome("");
             closeForm();
@@ -68,12 +78,15 @@ export default function Section() {
         e.preventDefault();
         if (valueExpense && valueExpenseAmoun && valueExpenseCategory) {
             setOutflows([...outFlows, { Expense: valueExpense, Amount: valueExpenseAmoun, Category: valueExpenseCategory }]);
+            setBalance(balance - parseFloat(valueExpenseAmoun));
+            setExpenseBalance(expenseBalance- parseFloat(valueExpenseAmoun))
             setValueExpense("");
             setValueExpenseAmount("");
             setValueExpenseCategory("");
             closeForm();
         }
     };
+
 
     return (
         <div className='Section'>
@@ -92,9 +105,11 @@ export default function Section() {
                         </div>
                         <div className="card-body">
                             <blockquote className="blockquote mb-0">
-                                <p className='d-flex justify-content-between align-items-center'><strong>Inflow</strong> <strong>Summa</strong></p>
+                                <p className='d-flex justify-content-between align-items-center'><strong>Inflow</strong> <strong>{IncomeBalance}</strong></p>
+                                
+                                <p className='d-flex justify-content-between align-items-center'><strong>Outflow</strong> <strong>{expenseBalance}</strong></p>
                                 <hr />
-                                <p className='d-flex justify-content-between align-items-center'><strong>Outflow</strong> <strong>summa</strong></p>
+                                <p className='d-flex justify-content-between align-items-center'><strong>Overall balance</strong> <strong>{balance}</strong></p>
                             </blockquote>
                         </div>
                         <div>
